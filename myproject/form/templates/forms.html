@@ -1,0 +1,30 @@
+HTML
+{%load static %}
+<!DOCTYPEhtml>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Django Form Demo</title>
+<link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+<div class="container">
+<form method="POST" action="{% url 'submit_form' %}">
+{%csrf_token %}
+<h2>Student Registration</h2>
+<input type="text" name="name" placeholder="Enter Name">
+<input type="email" name="email" placeholder="Enter Email">
+<input type="number" name="age" placeholder="Enter Age">
+<select name="course">
+<option value="">Select Course</option>
+<option>Python</option>
+<option>Java</option>
+<option>Django</option>
+</select>
+<button type="submit">Submit</button>
+<p id="message"></p>
+</form>
+</div>
+<script src="{% static 'script.js' %}"></script>
+</body>
+</html>
